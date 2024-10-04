@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/framework.css">
+    <link rel="stylesheet" href="./styles/background.css">
+    <link rel="stylesheet" href="./styles/blades.css">
+    <link rel="stylesheet" href="./styles/panels.css">
+    <title>BOLTERNON</title>
+</head>
+<body onload="startup()">
+    <div class="container">
+        <div class="background flex">
+            <div class="bg-top bg-tab"></div>
+            <div class="bg-page"></div>
+            <div class="bg-bottom bg-tab"></div>
+        </div>
+        <canvas id="canvas" width="300" height="300"></canvas>
+        <div class="wrapper flex">
+            <div class="blades flex" onclick="adjustPanel(0)">
+                <div class="labels flex" id="label0"><h1 class="tags">Bolternon</h1></div>
+            </div>
+            <div class="panels" style="flex: 80%;">
+                <div class="wintop flex"><h1 class="toptext mobile">Bolternon</h1></div>
+                <div class="windows"></div>
+                <div class="winbottom flex"></div>
+            </div>
+            <div class="blades flex" onclick="adjustPanel(1)">
+                <div class="labels flex" id="label1"><h1 class="tags">Personal</h1></div>
+            </div>
+            <div class="panels">
+                <div class="wintop flex"><h1 class="toptext mobile">Personal</h1></div>
+                <div class="windows"></div>
+                <div class="winbottom flex"></div>
+            </div>
+            <div class="blades flex" onclick="adjustPanel(2)">
+                <div class="labels flex" id="label2"><h1 class="tags">Coding</h1></div>
+            </div>
+            <div class="panels">
+                <div class="wintop flex"><h1 class="toptext mobile">Coding</h1></div>
+                <div class="windows"></div>
+                <div class="winbottom flex"></div>
+            </div>
+            <div class="blades flex" onclick="adjustPanel(3)">
+                <div class="labels flex" id="label3"><h1 class="tags">Artwork</h1></div>
+            </div>
+            <div class="panels">
+                <div class="wintop flex"><h1 class="toptext mobile">Artwork</h1></div>
+                <div class="windows"></div>
+                <div class="winbottom flex"></div>
+            </div>
+            <div class="blades flex" onclick="adjustPanel(4)">
+                <div class="labels flex" id="label4"><h1 class="tags">Links</h1></div>
+            </div>
+            <div class="panels">
+                <div class="wintop flex"><h1 class="toptext mobile">Links</h1></div>
+                <div class="windows"></div>
+                <div class="winbottom flex"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./scripts/background.js"></script>
+<script src="./scripts/blades.js"></script>
+<script src="./scripts/panels.js"></script>
+<!--Configurable Data-->
+<script src="./data/userinfo.js"></script>
+</html>

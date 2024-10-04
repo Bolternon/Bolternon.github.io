@@ -1,0 +1,199 @@
+.panels {
+    display: flex;
+    flex-direction: var(--flex-dir-col);
+    flex: 0%;
+    transition: var(--transition);
+}
+.wintop, .winbottom {
+    display: none;
+    opacity: 0%;
+    flex: 10%;
+    transition: var(--transition);
+}
+.toptext {
+    font-weight: 100;
+    flex: 100%;
+    color: #fff;
+    font-size: 4vh;
+    margin-left: 2vw;
+    align-self: end;
+    z-index: 0;
+}
+.windows {
+    display: none;
+    opacity: 0%;
+    flex: 80%;
+    flex-direction: column;
+    width: 95%;
+    margin: 2vh 0 2vh 0;
+    align-self: center;
+    z-index: 0;
+    transition: var(--transition);
+}
+.trayless {
+    flex-direction: var(--flex-dir-row);
+    flex: 80%;
+}
+.tray {
+    flex: 20%;
+}
+.left, .right {
+    flex-direction: column;
+    flex: 50%;
+}
+.profile, .logo {
+    flex-direction: column;
+    flex: 35%;
+}
+.selection, .info {
+    flex-direction: column;
+    flex: 65%;
+    margin: 0 .75vw 0 .75vw;
+}
+.gamertag {
+    flex-direction: column;
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    align-self: center;
+    border: .2vw solid #0008;
+    box-shadow: .5vw .5vw .5vw #fff4 inset, -.5vw -.5vw .5vw #fff4 inset;
+}
+.username {
+    flex: 25%;
+    background-image: linear-gradient(to right, #0004, transparent);
+}
+.userinfo {
+    flex: 75%;
+}
+.usertext {
+    font-size: 4vh;
+}
+.pfp {
+    flex: 25%;
+}
+.icon {
+    height: 80%;
+    width: auto;
+    aspect-ratio: 1/1;
+    border: .2vw solid #0008;
+    align-self: center;
+    margin: auto;
+    background-image: url("https://avatars.githubusercontent.com/u/72898938");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.stats {
+    flex-direction: column;
+    flex: 75%;
+}
+.stat, .scoreName {
+    flex: 1;
+}
+.score {
+    flex: 1;
+    text-align: right;
+    margin-right: 1vh;
+}
+.stattext {
+    font-size: 3.5vh;
+}
+.button {
+    flex: 1;
+    border-top: .3vh solid #0008;
+    border-bottom: .3vh solid #0008;
+    box-shadow: -.3vh 0 0 #0008 inset;
+    transition: var(--transition);
+}
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 1vh 1vh #fff8 inset, 0 -1vh 1vh #fff8 inset;
+    background-image: linear-gradient(to right, transparent, #fff2, transparent);
+}
+.nobutton {
+    flex: 1;
+    box-shadow: -.3vh 0 0 #0008 inset;
+}
+.buttontext {
+    align-self: center;
+    font-size: 5vh;
+    margin-left: 2vh;
+}
+.buttontext:hover {
+    cursor: pointer;
+}
+.ztn {
+    background-image: url("../images/logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 4/3;
+    margin: auto;
+    align-self: center;
+    z-index: 0;
+}
+.home, .links {
+    flex-direction: var(--flex-dir-row);
+    flex: 100%;
+}
+.title {
+    flex-direction: column;
+    flex: 75%;
+}
+.welcome {
+    background-image: url("../images/welcome.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    aspect-ratio: 4/3;
+    height: 90%;
+    width: auto;
+    align-self: center;
+    margin: auto;
+    border: .2vw solid #0008;
+    box-shadow: .5vw .5vw .5vw #fff4 inset, -.5vw -.5vw .5vw #fff4 inset;
+}
+.miniselection {
+    flex-direction: column;
+    flex: 25%;
+}
+@media screen and (orientation: portrait) {
+    .mobile {
+        display: none !important;
+    }
+    .windows {
+        width: 80%;
+        height: 100%;
+    }
+    .gamertag {
+        box-shadow: .5vh .5vh .5vh #fff4 inset, -.5vh -.5vh .5vh #fff4 inset;
+        border: .4vh solid #0008;
+    }
+    .usertext {
+        font-size: 2.5vh;
+    }
+    .icon {
+        border: .4vh solid #0008;
+    }
+    .stattext {
+        font-size: 2vh;
+    }
+    .button {
+        box-shadow: none;
+    }
+    .nobutton {
+        box-shadow: none;
+    }
+    .buttontext {
+        font-size: 3vh;
+    }
+    .trayless, .home, .links {
+        margin: 1vh 0 1vh 0;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .welcome {
+        height: auto;
+        width: 90%;
+    }
+}
