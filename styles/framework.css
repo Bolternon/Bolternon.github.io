@@ -7,3 +7,15 @@
 .column {
     flex-direction: column;
 }
+.f1 {
+    flex: 1;
+}
+.f50p {
+    flex: 50%;
+}
+.tl {
+    text-align: left;
+}
+.tr {
+    text-align: right;
+}

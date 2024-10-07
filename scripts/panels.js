@@ -11,9 +11,9 @@ const panelData = [
     ],
     [
         ["About Me", ""],
-        ["Experience", ""],
         ["Interests", ""],
         ["Friends", ""],
+        ["N/A", ""],
         ["N/A", ""]
     ],
     [
@@ -43,7 +43,7 @@ const panelData = [
 ];
 const panelText = [
     "Welcome to My (Bolternon's) Website. You can find everything you need to know About Me (Bolternon), My Coding, and My Artwork here.",
-    "Learn a bit about me about myself and my work experience, perhaps also check out my friends' websites while your at it.",
+    "Learn a bit about myself and my interests, perhaps also check out my friends' websites while your at it.",
     "View my Coding related projects for both back-end and front-end that ive made on my own and with others.",
     "View my Artwork along with other art related things that ive created over the years.",
     "If you wish to contact me, visit my listed social media accounts, dont be afraid to reach out."
@@ -57,11 +57,11 @@ function generatePanels() {
             case 'S':
                 const trayless = createDiv("trayless flex");
                 binbow[p].appendChild(trayless);
-                const left = createDiv("left flex");
+                const left = createDiv("left flex f50p column");
                 trayless.appendChild(left);
-                const profile = createDiv("profile flex");
+                const profile = createDiv("profile flex column");
                 left.appendChild(profile);
-                const gamertag = createDiv("gamertag flex");
+                const gamertag = createDiv("gamertag flex column");
                 profile.appendChild(gamertag);
                 const username = createDiv("username flex");
                 username.appendChild(injectTxt(usertitle, "usertext"));
@@ -72,20 +72,20 @@ function generatePanels() {
                 userinfo.appendChild(pfp);
                 const icon = createDiv("icon");
                 pfp.appendChild(icon);
-                const stats = createDiv("stats flex");
+                const stats = createDiv("stats flex column");
                 userinfo.appendChild(stats);
                 const statistics = ["Projects", "Coderscore", "Brain IQ"];
                 for (let s = 0; s < 3; s++) {
-                    const stat = createDiv("stat flex");
+                    const stat = createDiv("stat flex f1");
                     stats.appendChild(stat);
-                    const scoreName = createDiv("scoreName");
+                    const scoreName = createDiv("scoreName f1");
                     scoreName.appendChild(injectTxt(statistics[s], "stattext"));
-                    const score = createDiv("score");
+                    const score = createDiv("score f1");
                     score.appendChild(injectTxt(userstats[s], "stattext"));
                     stat.appendChild(scoreName);
                     stat.appendChild(score);
                 };
-                const selection = createDiv("selection flex");
+                const selection = createDiv("selection flex column");
                 left.appendChild(selection);
                 for (let s = 0; s < panelData[p].length; s++) {
                     if (panelData[p][s][0] != "N/A") {
@@ -98,24 +98,29 @@ function generatePanels() {
                         selection.appendChild(button);
                     }
                 };
-                const right = createDiv("right flex");
+                const right = createDiv("right flex f50p column");
                 trayless.appendChild(right);
                 const logo = createDiv("logo mobile flex");
                 right.appendChild(logo);
                 const ztn = createDiv("ztn");
                 logo.appendChild(ztn);
-                const info = createDiv("info flex");
+                const info = createDiv("info flex column");
                 info.appendChild(injectTxt(panelText[p], "usertext"));
                 right.appendChild(info);
                 const tray = createDiv("tray mobile flex");
                 binbow[p].appendChild(tray);
+                const trayA = createDiv("trayA");
+                tray.appendChild(trayA);
+                const trayB = createDiv("trayB flex");
+                trayB.appendChild(injectTxt("Open Tray", "traytext"));
+                tray.appendChild(trayB);
             break;
             case 'V':
                 const links = createDiv("links flex");
                 binbow[p].appendChild(links);
-                const vleft = createDiv("left flex");
+                const vleft = createDiv("left flex f50p");
                 links.appendChild(vleft);
-                const vselection = createDiv("selection flex");
+                const vselection = createDiv("selection flex column");
                 vleft.appendChild(vselection);
                 for (let s = 0; s < panelData[p].length; s++) {
                     if (panelData[p][s][0] != "N/A") {
@@ -128,27 +133,27 @@ function generatePanels() {
                         vselection.appendChild(button);
                     }
                 };
-                const vright = createDiv("right flex");
+                const vright = createDiv("right flex f50p");
                 links.appendChild(vright);
-                const vinfo = createDiv("info flex");
+                const vinfo = createDiv("info flex column");
                 vinfo.appendChild(injectTxt(panelText[p], "usertext"));
                 vright.appendChild(vinfo);
             break;
             case 'M':
                 const home = createDiv("home flex");
                 binbow[p].appendChild(home);
-                const mleft = createDiv("left flex");
+                const mleft = createDiv("left flex f50p");
                 home.appendChild(mleft);
-                const minfo = createDiv("info flex");
+                const minfo = createDiv("info flex column");
                 minfo.appendChild(injectTxt(panelText[p], "usertext"));
                 mleft.appendChild(minfo);
-                const mright = createDiv("right flex");
+                const mright = createDiv("right flex f50p column");
                 home.appendChild(mright);
-                const title = createDiv("title flex");
+                const title = createDiv("title flex column");
                 mright.appendChild(title);
                 const welcome = createDiv("welcome");
                 title.appendChild(welcome);
-                const mselection = createDiv("miniselection flex");
+                const mselection = createDiv("miniselection flex column");
                 mright.appendChild(mselection);
                 for (let s = 0; s < panelData[p].length; s++) {
                     if (panelData[p][s][0] != "N/A") {

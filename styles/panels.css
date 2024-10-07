@@ -14,10 +14,53 @@
     font-weight: 100;
     flex: 100%;
     color: #fff;
+    text-shadow: .25vh .25vh #000;
     font-size: 4vh;
     margin-left: 2vw;
     align-self: end;
     z-index: 0;
+}
+.bottomtext {
+    font-weight: 100;
+    flex: 100%;
+    color: #fff;
+    text-shadow: .25vh .25vh #000;
+    font-size: 4vh;
+    margin: 0 .5vw 0 .5vw;
+    align-self: center;
+    z-index: 0;
+}
+.buttonA {
+    margin-right: 2vw;
+}
+.buttonB {
+    margin-right: 4vw;
+}
+.buttonX {
+    margin-left: 2vw;
+}
+.buttonY {
+    margin-left: 4vw;
+}
+.button360 {
+    height: 90%;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+#A {
+    background-image: url("../images/buttonA.png");
+}
+#B {
+    background-image: url("../images/buttonB.png");
+}
+#X {
+    background-image: url("../images/buttonX.png");
+}
+#Y {
+    background-image: url("../images/buttonY.png");
 }
 .windows {
     display: none;
@@ -37,21 +80,38 @@
 .tray {
     flex: 20%;
 }
-.left, .right {
-    flex-direction: column;
-    flex: 50%;
+.trayA {
+    position: absolute;
+    height: 15.364%;
+    width: auto;
+    aspect-ratio: 1/1;
+    border: .25vw solid #0004;
+    margin-left: -.125vw;
+    margin-top: -.125vw;
+    border-radius: 100%;
+    background-image: radial-gradient(transparent, transparent, #0004);
+}
+.trayB {
+    height: 50%;
+    width: 95%;
+    margin: auto;
+    align-self: center;
+    border-radius: 360px;
+    border: .25vw solid #0004;
+}
+.traytext {
+    align-self: center;
+    font-size: 5vh;
+    margin-left: 7vw;
 }
 .profile, .logo {
-    flex-direction: column;
     flex: 35%;
 }
 .selection, .info {
-    flex-direction: column;
     flex: 65%;
     margin: 0 .75vw 0 .75vw;
 }
 .gamertag {
-    flex-direction: column;
     width: 95%;
     height: 85%;
     margin: auto;
@@ -84,14 +144,9 @@
     background-repeat: no-repeat;
 }
 .stats {
-    flex-direction: column;
     flex: 75%;
 }
-.stat, .scoreName {
-    flex: 1;
-}
 .score {
-    flex: 1;
     text-align: right;
     margin-right: 1vh;
 }
@@ -100,10 +155,12 @@
 }
 .button {
     flex: 1;
-    border-top: .3vh solid #0008;
     border-bottom: .3vh solid #0008;
     box-shadow: -.3vh 0 0 #0008 inset;
     transition: var(--transition);
+}
+.button:first-child {
+    border-top: .3vh solid #0008;
 }
 .button:hover {
     cursor: pointer;
@@ -138,7 +195,6 @@
     flex: 100%;
 }
 .title {
-    flex-direction: column;
     flex: 75%;
 }
 .welcome {
@@ -154,8 +210,8 @@
     box-shadow: .5vw .5vw .5vw #fff4 inset, -.5vw -.5vw .5vw #fff4 inset;
 }
 .miniselection {
-    flex-direction: column;
     flex: 25%;
+    margin: 0 .75vw 0 .75vw;
 }
 @media screen and (orientation: portrait) {
     .mobile {
@@ -165,7 +221,7 @@
         width: 80%;
         height: 100%;
     }
-    .gamertag {
+    .gamertag, .welcome {
         box-shadow: .5vh .5vh .5vh #fff4 inset, -.5vh -.5vh .5vh #fff4 inset;
         border: .4vh solid #0008;
     }
@@ -189,11 +245,5 @@
     }
     .trayless, .home, .links {
         margin: 1vh 0 1vh 0;
-    }
-}
-@media screen and (max-width: 1280px) {
-    .welcome {
-        height: auto;
-        width: 90%;
     }
 }
