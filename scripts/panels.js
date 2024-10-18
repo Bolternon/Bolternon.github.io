@@ -10,21 +10,21 @@ const panelData = [
         ["N/A", ""]
     ],
     [
-        ["About Me", ""],
-        ["Interests", ""],
-        ["Friends", ""],
+        ["About Me", "alert('Menu Not Implemented')"],
+        ["Interests", "alert('Menu Not Implemented')"],
+        ["Friends", "alert('Menu Not Implemented')"],
         ["N/A", ""],
         ["N/A", ""]
     ],
     [
-        ["My Websites", ""],
-        ["My Software", ""],
-        ["Languages", ""],
-        ["Software", ""],
+        ["My Websites", "unloadBinbow('D', 0)"],
+        ["My Software", "unloadBinbow('D', 1)"],
+        ["Languages", "unloadBinbow('E', 2)"],
+        ["Software", "alert('Menu Not Implemented')"],
         ["N/A", ""]
     ],
     [
-        ["My Artwork", ""],
+        ["My Artwork", "alert('Menu Not Implemented')"],
         ["N/A", ""],
         ["N/A", ""],
         ["N/A", ""],
@@ -91,12 +91,12 @@ function generatePanels() {
                     if (panelData[p][s][0] != "N/A") {
                         const button = createDiv("button flex");
                         button.appendChild(injectTxt(panelData[p][s][0], "buttontext"));
-                        button.setAttribute("onclick", panelData[p][s][1]);
+                        button.setAttribute("onclick", panelData[p][s][1] + ";setPanelPos(" + s + ")");
                         selection.appendChild(button);
                     } else {
                         const button = createDiv("nobutton");
                         selection.appendChild(button);
-                    }
+                    };
                 };
                 const right = createDiv("right flex f50p column");
                 trayless.appendChild(right);
@@ -131,7 +131,7 @@ function generatePanels() {
                     } else {
                         const button = createDiv("nobutton");
                         vselection.appendChild(button);
-                    }
+                    };
                 };
                 const vright = createDiv("right flex f50p");
                 links.appendChild(vright);
@@ -164,7 +164,7 @@ function generatePanels() {
                     } else {
                         const button = createDiv("nobutton");
                         mselection.appendChild(button);
-                    }
+                    };
                 };
             break;
         };
@@ -201,6 +201,9 @@ function adjustPanel(e) {
         },150);
     };
 };
+function setPanelPos(e) {
+    panelPos = e;
+}
 function hideBinbow(w) {
     binbow[w].style.display = "none";
     binbow[w].style.opacity = "0%";
@@ -219,4 +222,75 @@ function showBinbow(w) {
         binbot[w].style.opacity = "100%";
         selectable = true;
     },100);
-}
+};
+function unloadBinbow(t,l) {
+    if (!inMenu) {
+        inMenu = true;
+        selectable = false;
+        css.style.setProperty("--transition", "all .25s ease-in");
+        binbow[bladePos].style.opacity = "0%";
+        bintop[bladePos].style.opacity = "0%";
+        binbot[bladePos].style.opacity = "0%";
+        setTimeout(function(){
+            css.style.setProperty("--transition", "all .5s ease-in");
+            css.style.setProperty("--width-desktop", "100vw");
+            css.style.setProperty("--blade-width", "0%");
+            css.style.setProperty("--blade-edges", "none");
+            panel[bladePos].style.flex = "100%";
+            for (let i = 0; i < 5; i++) {
+                tag[i].style.fontSize = "0";
+            };
+            setTimeout(function(){
+                generateMenu(t,l);
+                loadMenu();
+            },500);
+        },250);
+    };
+};
+function restoreBinbow() {
+    dualPos = 0;
+    menuPos = 0;
+    css.style.setProperty("--transition", "all .25s ease-out");
+    const menuGUI = document.querySelector(".menuGUI");
+    menuGUI.style.opacity = "0%";
+    bintop[bladePos].style.opacity = "0%";
+    binbot[bladePos].style.opacity = "0%";
+    setTimeout(function(){
+        menuGUI.remove();
+        menu[bladePos].style.opacity = "0%";
+        menu[bladePos].style.display = "none";
+        css.style.setProperty("--transition", "all .5s ease-out");
+        css.style.setProperty("--width-desktop", "90vw");
+        css.style.setProperty("--blade-width", "4%");
+        css.style.setProperty("--blade-edges", "-.75vw 0 0 #888 inset, -1.5vw 0 1.5vw #0008 inset, .75vw 0 0 #888 inset, 1.5vw 0 1.5vw #0008 inset");
+        panel[bladePos].style.flex = "80%";
+        binbow[bladePos].style.display = "flex";
+        for (let i = 0; i < 5; i++) {
+            adjustLabel(i);
+        };
+        setTimeout(function(){
+            topText[bladePos].innerHTML = userlabel[bladePos];
+            binbow[bladePos].style.opacity = "100%";
+            bintop[bladePos].style.opacity = "100%";
+            binbot[bladePos].style.opacity = "100%";
+            css.style.setProperty("--transition", "all .15s linear");
+            inMenu = false;
+            selectable = true;
+        },500);
+    },250);
+};
+function loadUserStats() {
+    userstats[0] = userdata[2][0][0].length + userdata[2][0][1].length + userdata[2][1][0].length + userdata[2][1][1].length;
+    for (let z = 0; z < 2; z++) {
+        for (let y = 0; y < 2; y++) {
+            for (let x = 0; x < userdata[2][z][y].length; x++) {
+                userstats[1] += (userdata[2][z][y][x].dataCode * 25);
+            };
+        };
+    };
+    for (let y = 0; y < 2; y++) {
+        for (let x = 0; x < userdata[2][2][y].length; x++) {
+            userstats[2] += (userdata[2][2][y][x].brainIQ * 1);
+        };
+    };
+};

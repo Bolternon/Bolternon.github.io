@@ -5,6 +5,7 @@ const tag = document.querySelectorAll(".tags");
 let selectable = true;
 let bladePos = 5;
 function startup() {
+    loadUserStats();
     adjustPanel(0);
     generatePanels();
 };

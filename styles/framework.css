@@ -7,6 +7,9 @@
 .column {
     flex-direction: column;
 }
+.center {
+    margin: 0 auto 0 auto;
+}
 .f1 {
     flex: 1;
 }
@@ -18,4 +21,7 @@
 }
 .tr {
     text-align: right;
+}
+.tc {
+    text-align: center;
 }

@@ -1,0 +1,186 @@
+.menus {
+    display: none;
+    opacity: 0%;
+    flex: 80%;
+    flex-direction: column;
+    width: 95%;
+    margin: 2vh 0 2vh 0;
+    align-self: center;
+    z-index: 0;
+    transition: var(--transition);
+}
+.menuGUI {
+    flex: 100%;
+    transition: var(--transition);
+}
+.dualtab {
+    cursor: pointer;
+    flex: 10%;
+}
+.dt {
+    cursor: pointer;
+    transition: var(--transition);
+}
+.dt:first-child {
+    border-left: .3vh solid #0008;
+    border-right: .15vh solid #0008;
+    box-shadow: var(--dualtab-selected);
+}
+.dt:last-child {
+    border-left: .15vh solid #0008;
+    border-right: .3vh solid #0008;
+    box-shadow: var(--dualtab);
+}
+.dualtext {
+    cursor: pointer;
+    align-self: center;
+    font-size: 6vh;
+}
+.interface {
+    flex-direction: var(--flex-dir-row);
+    flex: 90%;
+}
+.menuselect {
+    flex: 90%;
+    width: 90%;
+    height: 95%;
+    align-self: center;
+}
+.optionicon {
+    aspect-ratio: 1/1;
+    align-self: center;
+    width: auto;
+    height: 90%;
+    background-image: url(../images/icons/languages/HTML.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.option {
+    cursor: pointer;
+    flex: 1;
+    border-bottom: .3vh solid #0008;
+    box-shadow: -.3vh 0 0 #0008 inset;
+    transition: var(--transition);
+}
+.option:first-child {
+    border-top: .3vh solid #0008;
+}
+.option:hover {
+    box-shadow: 0 1vh 1vh #fff8 inset, 0 -1vh 1vh #fff8 inset;
+    background-image: linear-gradient(to right, transparent, #fff2, transparent);
+}
+.nooption {
+    flex: 1;
+    box-shadow: -.3vh 0 0 #0008 inset;
+}
+.optiontext {
+    cursor: pointer;
+    align-self: end;
+    font-size: 4vh;
+    margin-left: 2vh;
+}
+.optiontext:hover {
+    cursor: pointer;
+}
+.projectpreview {
+    width: 90%;
+    height: 95%;
+    align-self: center;
+    border: .2vw solid #0008;
+    border-radius: 16px;
+    box-shadow: .5vw .5vw .5vw #0004 inset, -.5vw -.5vw .5vw #0004 inset;
+}
+.menunav {
+    cursor: pointer;
+    width: 90%;
+    align-self: center;
+    flex: 10%;
+}
+.mn {
+    cursor: pointer;
+    transition: var(--transition);
+}
+.mn:first-child, .mn:last-child {
+    box-shadow: -.3vh 0 0 #0008 inset, .3vh 0 0 #0008 inset;
+}
+.mn:hover {
+    box-shadow: 0 1vh 1vh #fff8 inset, 0 -1vh 1vh #fff8 inset;
+}
+.menutext {
+    cursor: pointer;
+    align-self: center;
+    margin: 0 auto 0 auto;
+    font-size: 5vh;
+}
+.prjA {
+    flex: 20%;
+    margin: 0 .5vw 0 .5vw;
+}
+.prjB {
+    flex: 10%;
+    background-color: #0004;
+}
+.prjC {
+    flex: 60%;
+}
+.prjD {
+    flex: 10%;
+}
+.prjE {
+    flex: 70%;
+}
+.prjicon {
+    height: 90%;
+    width: auto;
+    aspect-ratio: 1/1;
+    align-self: center;
+    background-image: url(../images/icons/languages/HTML.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.prjtext {
+    font-size: 5vh;
+    align-self: center;
+}
+.prjdesc {
+    font-size: 4vh;
+}
+.slot {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    align-self: center;
+    background-image: url(../images/icons/languages/HTML.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+@media screen and (orientation: portrait) {
+    .menus {
+        width: 80%;
+        height: 100%;
+    }
+    .menuselect, .menunav {
+        width: 100%;
+    }
+    .mn:first-child {
+        box-shadow: -.3vh 0 0 #0008 inset;
+    }
+    .mn:last-child {
+        box-shadow: .3vh 0 0 #0008 inset;
+    }
+    .option {
+        box-shadow: none;
+    }
+    .nooption {
+        box-shadow: none;
+    }
+    .dualtext {
+        font-size: 6vw;
+    }
+    .optiontext {
+        font-size: 3vh;
+    }
+    .menutext {
+        font-size: 6vw;
+    }
+}

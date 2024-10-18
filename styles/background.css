@@ -1,22 +1,24 @@
 #canvas {
     position: fixed;
-    width: var(--width);
+    width: var(--width-desktop);
     height: 100vh;
     margin: 0 auto 0 auto;
     left: 0;
     right: 0;
-    box-shadow: -.75vw 0 0 #888 inset, -1.5vw 0 1.5vw #0008 inset, .75vw 0 0 #888 inset, 1.5vw 0 1.5vw #0008 inset;
+    box-shadow: var(--blade-edges);
     filter: contrast(125%);
+    transition: var(--transition);
 }
 .background {
     position: fixed;
     flex-direction: var(--flex-dir-col);
-    width: var(--width);
+    width: var(--width-desktop);
     height: 100vh;
     margin: 0 auto 0 auto;
     left: 0;
     right: 0;
     filter: contrast(125%);
+    transition: var(--transition);
 }
 .bg-top {
     flex: 10%;
@@ -36,6 +38,10 @@
 @media screen and (orientation: portrait) {
     #canvas {
         box-shadow: none;
+        width: var(--width-mobile);
+    }
+    .background {
+        width: var(--width-mobile);
     }
     .bg-top {
         box-shadow: 5px 0vh 5vh inset rgba(255,255,255,.3), -1px 0vh 1vh inset rgba(0,0,0,.25);
