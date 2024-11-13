@@ -162,6 +162,12 @@
     .menuselect, .menunav {
         width: 100%;
     }
+    .dt:first-child {
+        border-left: none;
+    }
+    .dt:last-child {
+        border-right: none;
+    }
     .mn:first-child {
         box-shadow: -.3vh 0 0 #0008 inset;
     }

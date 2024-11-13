@@ -1,0 +1,128 @@
+.sidebar {
+    position: fixed;
+    flex-direction: var(--flex-dir-row);
+    width: var(--sidebar-width);
+    height: 100vh;
+    z-index: 9001;
+    animation-name: none;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    margin: var(--sidebar-margin);
+}
+.sidepanel {
+    flex: 95%;
+    flex-direction: var(--flex-dir-col);
+}
+.side-top {
+    flex: 10%;
+    background-color: #888;
+    box-shadow: 0px 5vh 5vh inset rgba(255,255,255,.3), 0px -1vh 1vh inset rgba(0,0,0,.25);
+}
+.side-page {
+    flex: 80%;
+    background-color: #ccc;
+}
+.side-bottom {
+    display: grid;
+    flex: 10%;
+    background-color: #888;
+    box-shadow: 0px -5vh 5vh inset rgba(255,255,255,.1), 0px 1vh 1vh inset rgba(0,0,0,.25);
+}
+.side-menu {
+    flex: 90%;
+    flex-direction: column;
+    width: 95%;
+    margin: 2vh 0 2vh 0;
+    transition: var(--transition);
+}
+.side-buttons {
+    align-self: center;
+    transition: var(--transition);
+}
+.sidetext {
+    font-weight: 100;
+    flex: 100%;
+    color: #fff;
+    text-shadow: .25vh .25vh #000;
+    font-size: 4vh;
+    margin-left: 2vw;
+    align-self: end;
+    z-index: 0;
+    transition: var(--transition);
+}
+.sideicon {
+    aspect-ratio: 88/31;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    align-self: center;
+    width: auto;
+    height: 75%;
+    background-image: url(../images/icons/languages/HTML.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.sideblade {
+    flex: 5%;
+    box-shadow: 1.5vw 0 0 #ccc inset, -.5vw 0 .5vw #0008;
+    align-items: center;
+}
+.sidelabel {
+    width: var(--sidebar-label-width);
+    height: var(--sidebar-label-height);
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.sidetag {
+    rotate: 90deg;
+    position: absolute;
+    transform-origin: 0% 100%;
+    font-size: 2vw;
+}
+
+
+
+
+@keyframes openSideBar {
+    from {
+        margin: var(--sidebar-margin);
+    }
+    to {
+        margin: 0 0 0 0;
+    }
+}
+@keyframes closeSideBar {
+    from {
+        margin: 0 0 0 0;
+    }
+    to {
+        margin: var(--sidebar-margin);
+    }
+}
+@media screen and (orientation: portrait) {
+    .sidebar {
+        width: 100vw;
+        height: 100vh;
+    }
+    .side-top {
+        box-shadow: 5px 0vh 5vh inset rgba(255,255,255,.3), -1px 0vh 1vh inset rgba(0,0,0,.25);
+    }
+    .side-bottom {
+        box-shadow: -5px 0vh 5vh inset rgba(255,255,255,.1), 1px 0vh 1vh inset rgba(0,0,0,.25);
+    }
+    .side-menu {
+        margin: 0;
+    }
+    .sideblade {
+        box-shadow: 0 2vh 0 #ccc inset, 0 -.5vh .5vh #0008;
+    }
+    .sidelabel {
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+    }
+    .sidetag {
+        rotate: 0deg;
+        font-size: 2vh;
+    }
+}

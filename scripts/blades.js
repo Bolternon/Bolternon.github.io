@@ -6,7 +6,7 @@ let selectable = true;
 let bladePos = 5;
 function startup() {
     loadUserStats();
-    adjustPanel(0);
+    adjustPanel(1);
     generatePanels();
 };
 function adjustBlade(b) {

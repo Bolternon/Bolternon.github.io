@@ -12,7 +12,7 @@ const panelData = [
     [
         ["About Me", "alert('Menu Not Implemented')"],
         ["Interests", "alert('Menu Not Implemented')"],
-        ["Friends", "alert('Menu Not Implemented')"],
+        ["Friends", "openSideBar('F', 3)"],
         ["N/A", ""],
         ["N/A", ""]
     ],
@@ -52,7 +52,7 @@ function generatePanels() {
     for (let p = 0; p < 5; p++) {
         switch (panelType[p]) {
             case 'L':
-                binbow[p].innerHTML = "This is a test message."
+                binbow[p].innerHTML = "This is a test message.";
             break;
             case 'S':
                 const trayless = createDiv("trayless flex");
@@ -91,7 +91,7 @@ function generatePanels() {
                     if (panelData[p][s][0] != "N/A") {
                         const button = createDiv("button flex");
                         button.appendChild(injectTxt(panelData[p][s][0], "buttontext"));
-                        button.setAttribute("onclick", panelData[p][s][1] + ";setPanelPos(" + s + ")");
+                        button.setAttribute("onclick", "setPanelPos(" + s + ");" + panelData[p][s][1]);
                         selection.appendChild(button);
                     } else {
                         const button = createDiv("nobutton");
@@ -182,7 +182,7 @@ function injectTxt(text, name) {
     return h1;
 };
 function adjustPanel(e) {
-    if (selectable && e != bladePos) {
+    if (selectable && e != bladePos && !sideOpen) {
         selectable = false;
         bladePos = e;
         for (let i = 0; i < 5; i++) {
@@ -224,7 +224,7 @@ function showBinbow(w) {
     },100);
 };
 function unloadBinbow(t,l) {
-    if (!inMenu) {
+    if (!inMenu && selectable && !sideOpen) {
         inMenu = true;
         selectable = false;
         css.style.setProperty("--transition", "all .25s ease-in");

@@ -6,6 +6,10 @@
     --bg-tab: #888;
     --bg-page: #888;
     --transition: all .15s linear;
+    --sidebar-width: 55vw;
+    --sidebar-margin: 0 0 0 -100vw;
+    --sidebar-label-width: 100%;
+    --sidebar-label-height: 50%;
     --blade-width: 4%;
     --blade-edges: -.75vw 0 0 #888 inset, -1.5vw 0 1.5vw #0008 inset, .75vw 0 0 #888 inset, 1.5vw 0 1.5vw #0008 inset;
     --metal-shadow-left: .5vw 0 1vw #0004 inset, .5vw 0 .5vw #0008, -.5vw 0 .5vw #0008;
@@ -30,6 +34,9 @@
     :root {
         --flex-dir-col: row;
         --flex-dir-row: column;
+        --sidebar-margin: -100vh 0 0 0;
+        --sidebar-label-width: 50%;
+        --sidebar-label-height: 100%;
         --metal-shadow-left: 0 .5vh 1vh #0004 inset, 0 .5vh .5vh #0008, 0 -.5vh .5vh #0008;
         --metal-shadow-right: 0 -.5vh 1vh #0004 inset, 0 .5vh .5vh #0008, 0 -.5vh .5vh #0008;
         --metal-shadow-left-select: 0 .5vh 1vh #0004 inset, 0 -.75vh 0 var(--bg-tab) inset, 0 .5vh .5vh #0008, 0 -.5vh .5vh #0008;

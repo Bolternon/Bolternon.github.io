@@ -14,7 +14,42 @@ const userdata = [
         //Interests
         [],
         //Friends
-        []
+        [
+            [
+                {
+                    "friendName":"Bolternon",
+                    "friendSite":"https://bolternon.neocities.org",
+                    "friendIcon":"https://bolternon.neocities.org/Z-IMPORTANT_DATA/88x31/Bolternon.gif",
+                }
+            ],
+            [
+                {
+                    "friendName":"Illudens",
+                    "friendSite":"https://illudens.neocities.org",
+                    "friendIcon":"https://illudens.neocities.org/illudens.gif",
+                },
+                {
+                    "friendName":"Tauon",
+                    "friendSite":"https://tauon.dev",
+                    "friendIcon":"https://tauon.dev/images/88x31/lily.png",
+                },
+                {
+                    "friendName":"Gnawmon",
+                    "friendSite":"https://gnawmon.vern.cc",
+                    "friendIcon":"https://gnawmon.vern.cc/assets/88x31/gnawmon.png",
+                },
+                {
+                    "friendName":"AndrewIdot",
+                    "friendSite":"https://andrewidot.nekoweb.org",
+                    "friendIcon":"https://andrewidot.nekoweb.org/assets/88x31/andrewidot_88x31.gif",
+                },
+                {
+                    "friendName":"Liminal",
+                    "friendSite":"https://liminalityyy.github.io",
+                    "friendIcon":"https://liminalityyy.github.io/images/card/liminal.png",
+                }
+            ]
+        ]
     ],
     //Coding
     [
