@@ -293,7 +293,7 @@ function getLanguageIcon(id) {
         case "C++": return "";
         case "C": return "";
         case "PYTHON": return "";
-        case "PHP": return "";
+        case "PHP": return "./images/icons/languages/PHP.png";
         case "BS": return "./images/icons/languages/frameworks/BS.png";
         case "MYSQL": return "./images/icons/languages/frameworks/MYSQL.png";
         default: return "";
