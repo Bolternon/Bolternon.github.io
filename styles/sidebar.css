@@ -62,6 +62,32 @@
     background-size: 100% 100%;
     cursor: pointer;
 }
+.sideinfo {
+    flex: 87.5%;
+    margin: 0 .75vw 0 .75vw;
+}
+.sidebutton {
+    flex: 12.5%;
+    border-top: .3vh solid #0008;
+    border-bottom: .3vh solid #0008;
+    box-shadow: -.3vh 0 0 #0008 inset;
+    margin: 0 .75vw 0 .75vw;
+    transition: var(--transition);
+}
+.sidebutton:hover {
+    cursor: pointer;
+    box-shadow: 0 1vh 1vh #fff8 inset, 0 -1vh 1vh #fff8 inset;
+    background-image: linear-gradient(to right, transparent, #fff2, transparent);
+}
+.website {
+    flex: 20%
+}
+.interests {
+    flex: 50%
+}
+.sidestats {
+    flex: 80%;
+}
 .sideblade {
     flex: 5%;
     box-shadow: 1.5vw 0 0 #ccc inset, -.5vw 0 .5vw #0008;

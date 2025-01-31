@@ -148,9 +148,61 @@ function generateMenu(t,l) {
         loadDualPreviews(t,0);
         loadDualTab(t,0)
         loadDualSelection(t);
+    } else if (t == 'A') { /*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/;
+        const menuGUI = createDiv("menuGUI flex f-row");
+        menu[bladePos].appendChild(menuGUI);
+        const artleft = createDiv("artleft flex f50p column");
+        menuGUI.appendChild(artleft);
+        const menuSelect = createDiv("menuselect flex column center");
+        artleft.appendChild(menuSelect);
+        const artnav = ["Next Page","Prev Page","N/A","N/A","N/A","N/A","N/A","Exit Menu"];
+        const artclk = ["","","","","","","","restoreBinbow()"];
+        for (let i = 0; i < 8; i++) {
+            if (artnav[i] != "N/A") {
+                const className = i == 7 ? "option option-last o flex f1" : "option o flex f1";
+                const daLinky = createDiv(className);
+                daLinky.appendChild(injectTxt(artnav[i], "menutext f1"));
+                daLinky.setAttribute("onclick", artclk[i]);
+                menuSelect.appendChild(daLinky);
+            } else {
+                const daLinky = createDiv("nobutton mobile");
+                menuSelect.appendChild(daLinky);
+            };
+        };
+        const artright = createDiv("artright flex f50p column");
+        menuGUI.appendChild(artright);
+        for (let y = 0; y < 3; y++) {
+            const row = createDiv("artrow flex f1 row");
+            artright.appendChild(row);
+            for (let x = 0; x < 3; x++) {
+                const cell = createDiv("artcell flex f1");
+                row.appendChild(cell);
+                const frame = createDiv("artframe flex column");
+                cell.appendChild(frame);
+                const image = createDiv("artimg c-1x1");
+                image.style.backgroundImage = "url(https://placehold.co/90x160/png)";
+                frame.appendChild(image);
+            };
+        };
+        loadArtwork();
     };
 };
 
+function loadArtwork() {
+    const frames = document.querySelectorAll(".artframe");
+    const images = document.querySelectorAll(".artimg");
+    for (let i = 0; i < 9; i++) {
+        if (i < userdata[bladePos][panelPos][0].length) {
+            frames[i].style.display = "flex";
+            images[i].className = ("artimg c-"+userdata[bladePos][panelPos][0][i].artRatio);
+            images[i].style.backgroundImage = "url("+userdata[bladePos][panelPos][0][i].artImage+")";
+            images[i].title = userdata[bladePos][panelPos][0][i].artTitle;
+            images[i].setAttribute("onclick",("location.href='"+userdata[bladePos][panelPos][0][i].artURL+"'"));
+        } else {
+            frames[i].style.display = "none";
+        };
+    };
+};
 function loadDualSelection(x) {
     if (x == 'D') {
         loadDualSelections();
@@ -287,6 +339,7 @@ function getLanguageIcon(id) {
         case "HTML": return "./images/icons/languages/HTML.png";
         case "CSS": return "./images/icons/languages/CSS.png";
         case "JS": return "./images/icons/languages/JS.png";
+        case "TS": return "";
         case "C#": return "./images/icons/languages/CS.png";
         case "JAVA": return "./images/icons/languages/JAVA.png";
         case "LUA": return "./images/icons/languages/LUA.png";

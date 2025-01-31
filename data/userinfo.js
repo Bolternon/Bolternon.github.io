@@ -10,9 +10,21 @@ const userdata = [
     //Personal
     [
         //About Me
-        [],
-        //Interests
-        [],
+        [
+            [
+                {
+                    "description":"Hello, my name is Bolternon, and I am an aspiring programmer & game dev. I like to draw in my spare time and hang out/play games with my friends! I am always looking for new people to be friends with, if interested, please join my discord server ZetcherNet.",
+                    "location":"United States",
+                    "website":"https://bolternon.github.io",
+                    "interestA":"",
+                    "interestB":"",
+                    "interestC":"",
+                    "interestD":"",
+                    "interestE":"",
+                    "interestF":""
+                }
+            ]
+        ],
         //Friends
         [
             [
@@ -111,7 +123,7 @@ const userdata = [
                     "dataCode11":""
                 },
                 {
-                    "dataTitle":"Alphaver-X: Beginnings",
+                    "dataTitle":"Dunegon3D",
                     "dataIcon":"./images/icons/websites/solo/dungeon3d.png",
                     "dataLink":"https://bolternon.github.io/Alphaver-X_Beginnings",
                     "dataCode":"3",
@@ -210,7 +222,34 @@ const userdata = [
     //Artwork
     [
         //Artwork
-        []
+        [
+            [
+                {
+                    "artTitle":"BestBird1",
+                    "artImage":"./images/arts/BestBird1.png",
+                    "artRatio":"1x1",
+                    "artURL":"https://x.com/Bolternon/status/1759298419267350688"
+                },
+                {
+                    "artTitle":"BananaTrio",
+                    "artImage":"./images/arts/BananaTrio.png",
+                    "artRatio":"4x3",
+                    "artURL":"https://x.com/Bolternon/status/1589352116661145601"
+                },
+                {
+                    "artTitle":"GroupPhotoA",
+                    "artImage":"./images/arts/GroupPhotoA.png",
+                    "artRatio":"16x9",
+                    "artURL":""
+                },
+                {
+                    "artTitle":"FrigidLights",
+                    "artImage":"./images/arts/FrigidLights.png",
+                    "artRatio":"4x3",
+                    "artURL":""
+                }
+            ]
+        ]
     ],
     //Links
     [

@@ -7,6 +7,12 @@
 .column {
     flex-direction: column;
 }
+.f-row {
+    flex-direction: var(--flex-dir-row);
+}
+.f-column {
+    flex-direction: var(--flex-dir-col);
+}
 .center {
     margin: 0 auto 0 auto;
 }

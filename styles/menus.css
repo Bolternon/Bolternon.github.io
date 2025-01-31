@@ -62,7 +62,7 @@
     box-shadow: -.3vh 0 0 #0008 inset;
     transition: var(--transition);
 }
-.option:first-child {
+.option:first-child, .option-last {
     border-top: .3vh solid #0008;
 }
 .option:hover {
@@ -154,6 +154,46 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+.artleft {
+    order: 0;
+    flex: 50%;
+}
+.artright {
+    order: 1;
+    flex: 50%;
+}
+.artframe {
+    height: 90%;
+    width: 90%;
+    /*aspect-ratio: 1/1;*/
+    align-self: center;
+    margin: auto;
+    background-color: #0002;
+    border: .2vw solid #0008;
+    border-radius: 16px;
+}
+.artimg {
+    cursor: pointer;
+    align-self: center;
+    margin: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.c-1x1 {
+    aspect-ratio: 1/1;
+    width: auto;
+    height: 90%;
+}
+.c-4x3 {
+    aspect-ratio: 4/3;
+    width: 90%;
+    height: auto;
+}
+.c-16x9 {
+    aspect-ratio: 16/9;
+    width: 90%;
+    height: auto;
+}
 @media screen and (orientation: portrait) {
     .menus {
         width: 80%;
@@ -177,6 +217,9 @@
     .option {
         box-shadow: none;
     }
+    .option-last {
+        border-top: none;
+    }
     .nooption {
         box-shadow: none;
     }
@@ -188,5 +231,17 @@
     }
     .menutext {
         font-size: 6vw;
+    }
+    .artleft {
+        order: 1;
+        flex: 20%;
+    }
+    .artright {
+        order: 0;
+        flex: 80%;
+    }
+    .c-1x1 {
+        width: 90%;
+        height: auto;
     }
 }
