@@ -1,0 +1,52 @@
+#canvas {
+    position: fixed;
+    width: var(--width-desktop);
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    left: 0;
+    right: 0;
+    box-shadow: var(--blade-edges);
+    filter: contrast(125%);
+    transition: var(--transition);
+}
+.background {
+    position: fixed;
+    flex-direction: var(--flex-dir-col);
+    width: var(--width-desktop);
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    left: 0;
+    right: 0;
+    filter: contrast(125%);
+    transition: var(--transition);
+}
+.bg-top {
+    flex: 10%;
+    box-shadow: 0px 5vh 5vh inset rgba(255,255,255,.3), 0px -1vh 1vh inset rgba(0,0,0,.25);
+}
+.bg-page {
+    flex: 80%;
+    background-color: var(--bg-page);
+}
+.bg-bottom {
+    flex: 10%;
+    box-shadow: 0px -5vh 5vh inset rgba(255,255,255,.1), 0px 1vh 1vh inset rgba(0,0,0,.25);
+}
+.bg-tab {
+    background-color: var(--bg-tab);
+}
+@media screen and (orientation: portrait) {
+    #canvas {
+        box-shadow: none;
+        width: var(--width-mobile);
+    }
+    .background {
+        width: var(--width-mobile);
+    }
+    .bg-top {
+        box-shadow: 5px 0vh 5vh inset rgba(255,255,255,.3), -1px 0vh 1vh inset rgba(0,0,0,.25);
+    }
+    .bg-bottom {
+        box-shadow: -5px 0vh 5vh inset rgba(255,255,255,.1), 1px 0vh 1vh inset rgba(0,0,0,.25);
+    }
+}

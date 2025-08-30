@@ -1,0 +1,33 @@
+.flex {
+    display: flex;
+}
+.row {
+    flex-direction: row;
+}
+.column {
+    flex-direction: column;
+}
+.f-row {
+    flex-direction: var(--flex-dir-row);
+}
+.f-column {
+    flex-direction: var(--flex-dir-col);
+}
+.center {
+    margin: 0 auto 0 auto;
+}
+.f1 {
+    flex: 1;
+}
+.f50p {
+    flex: 50%;
+}
+.tl {
+    text-align: left;
+}
+.tr {
+    text-align: right;
+}
+.tc {
+    text-align: center;
+}
